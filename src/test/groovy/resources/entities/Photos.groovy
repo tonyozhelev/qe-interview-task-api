@@ -8,7 +8,7 @@ class Photos  extends HTTPClient{
 
     static final photos = '/photos'
 
-    static Response createPhoto(String albumId, String title) {
+    static Response createPhoto(int albumId, String title) {
         post(photos, TestDataBuilder.photo(albumId,title))
     }
 }

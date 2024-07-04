@@ -8,7 +8,7 @@ class Albums extends HTTPClient{
 
     static final albums = '/albums'
 
-    static Response createAlbum(String userId, String albumName) {
+    static Response createAlbum(int userId, String albumName) {
         post(albums, TestDataBuilder.album(userId,albumName))
     }
 }

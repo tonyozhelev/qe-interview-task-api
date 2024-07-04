@@ -6,9 +6,9 @@ import resources.utils.TestDataBuilder
 
 class ToDo extends HTTPClient {
 
-  final toDos = '/todos'
+  static final toDos = '/todos'
 
-  Response createToDo(int userId, String title, boolean completed) {
+  static Response createToDo(int userId, String title, boolean completed) {
     post(toDos, TestDataBuilder.userToDo(userId, title, completed))
   }
 }

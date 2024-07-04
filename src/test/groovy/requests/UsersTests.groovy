@@ -4,7 +4,6 @@ import io.restassured.response.Response
 import org.junit.jupiter.api.Test
 import resources.entities.Users
 import resources.utils.DataUtils
-import resources.utils.UserUtils
 
 
 class UsersTests{
@@ -20,9 +19,11 @@ class UsersTests{
     //verify request is successful
     assert response.statusCode() == 201
     //verify response data
-    var body = response.body().as(HashMap.class)
+    var body = response.body().jsonPath().getMap('$')
     assert body.name == name
     assert body.username == userName
     assert body.email == email
   }
+
+
 }

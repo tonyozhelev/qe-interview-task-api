@@ -43,17 +43,34 @@ class TestDataBuilder {
   }
 
 
-  static String album(String userId, String title) {
+  static String album(int userId, String title) {
     return "{\n" +
-            "\t\"userId\" : \"${userId}\",\n" +
+            "\t\"userId\" : ${userId},\n" +
             "\t\"title\" : \"${title}\"\n" +
             "}"
   }
 
-  static String photo(String albumId, String title) {
+  static String photo(int albumId, String title) {
     return "{\n" +
-            "\t\"albumId\" : \"${albumId}\",\n" +
+            "\t\"albumId\" : ${albumId},\n" +
             "\t\"title\" : \"${title}\"\n" +
             "}"
+  }
+
+  static String post(int userId, String title, String body) {
+    return "{\n" +
+            "    \"userId\": ${userId},\n" +
+            "    \"title\": \"${title}\",\n" +
+            "    \"body\": \"${body}\"\n" +
+            "}"
+  }
+
+  static String comment(int postId, String name, String email, String body) {
+    return "{\n" +
+            "    \"postId\": ${postId},\n" +
+            "    \"name\": \"${name}\",\n" +
+            "    \"email\": \"${email}\",\n" +
+            "    \"body\": \"${body}\"\n" +
+            "  }"
   }
 }
