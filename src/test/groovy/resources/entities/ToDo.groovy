@@ -1,15 +1,14 @@
-package resources
+package resources.entities
 
 import io.restassured.response.Response
+import resources.entities.base.HTTPClient
+import resources.utils.TestDataBuilder
 
 class ToDo extends HTTPClient {
 
   final toDos = '/todos'
 
-  TestDataBuilder testDataBuilder = new TestDataBuilder()
-
-
   Response createToDo(int userId, String title, boolean completed) {
-    post(toDos, testDataBuilder.userToDo(userId, title, completed))
+    post(toDos, TestDataBuilder.userToDo(userId, title, completed))
   }
 }

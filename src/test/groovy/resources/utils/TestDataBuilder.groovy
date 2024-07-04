@@ -1,4 +1,4 @@
-package resources
+package resources.utils
 
 class TestDataBuilder {
 
@@ -19,9 +19,9 @@ class TestDataBuilder {
 
   static String user(String name, String userName, String email) {
     return " {\n" +
-      "    \"name\": " + name + ",\n" +
-      "    \"username\": " + userName + ",\n" +
-      "    \"email\": " + email + ",\n" +
+      "    \"name\": \"${name}\",\n" +
+      "    \"username\": \"${userName}\",\n" +
+      "    \"email\": \"${email}\",\n" +
       "    \"address\": {\n" +
       "      \"street\": \"Kulas Light\",\n" +
       "      \"suite\": \"Apt. 556\",\n" +
@@ -42,4 +42,18 @@ class TestDataBuilder {
       "  }"
   }
 
+
+  static String album(String userId, String title) {
+    return "{\n" +
+            "\t\"userId\" : \"${userId}\",\n" +
+            "\t\"title\" : \"${title}\"\n" +
+            "}"
+  }
+
+  static String photo(String albumId, String title) {
+    return "{\n" +
+            "\t\"albumId\" : \"${albumId}\",\n" +
+            "\t\"title\" : \"${title}\"\n" +
+            "}"
+  }
 }
